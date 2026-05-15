@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 220" width="600" height="220">
+  <defs>
+    <linearGradient id="carGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3AAFE4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1A7BB5;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e8381a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c42d12;stop-opacity:1" />
+    </linearGradient>
+<filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+    <filter id="glowBlue">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+
+  <!-- === ICON AREA === -->
+
+  <!-- Outer tire ring -->
+  <circle cx="110" cy="110" r="88" fill="none" stroke="#e8381a" stroke-width="8" opacity="1"/>
+
+  <!-- Tire tread segments -->
+  <g stroke="#e8381a" stroke-width="4" opacity="1">
+    <line x1="110" y1="22" x2="110" y2="12"/>
+    <line x1="136" y1="26" x2="141" y2="17"/>
+    <line x1="159" y1="38" x2="166" y2="30"/>
+    <line x1="177" y1="56" x2="185" y2="50"/>
+    <line x1="189" y1="78" x2="198" y2="75"/>
+    <line x1="198" y1="102" x2="207" y2="102"/>
+    <line x1="198" y1="128" x2="207" y2="131"/>
+    <line x1="185" y1="152" x2="193" y2="157"/>
+    <line x1="166" y1="172" x2="172" y2="180"/>
+    <line x1="141" y1="185" x2="145" y2="194"/>
+    <line x1="110" y1="198" x2="110" y2="208"/>
+    <line x1="79" y1="194" x2="75" y2="203"/>
+    <line x1="55" y1="185" x2="49" y2="193"/>
+    <line x1="34" y1="172" x2="28" y2="180"/>
+    <line x1="18" y1="152" x2="11" y2="158"/>
+    <line x1="8" y1="128" x2="1" y2="131"/>
+    <line x1="5" y1="102" x2="-4" y2="102"/>
+    <line x1="11" y1="78" x2="3" y2="75"/>
+    <line x1="27" y1="56" x2="20" y2="50"/>
+    <line x1="49" y1="38" x2="43" y2="30"/>
+    <line x1="73" y1="26" x2="68" y2="17"/>
+  </g>
+
+  <!-- Inner hub ring -->
+  <circle cx="110" cy="110" r="70" fill="#111" stroke="#2A2A2A" stroke-width="2"/>
+
+  <!-- Car silhouette (simplified, professional) -->
+  <!-- Car body -->
+  <g filter="url(#shadow)">
+    <!-- Main car body -->
+    <path d="M55,118
+             C55,118 62,105 72,100
+             L85,97
+             C87,94 90,87 96,84
+             L128,81
+             C133,78 140,76 148,76
+             L155,78
+             C160,78 164,81 166,84
+             L168,97
+             L172,100
+             C176,103 178,110 178,115
+             L178,122
+             C178,125 176,127 172,127
+             L168,127
+             C167,132 162,136 156,136
+             C150,136 145,132 144,127
+             L85,127
+             C84,132 79,136 73,136
+             C67,136 62,132 61,127
+             L55,127
+             C52,127 50,125 50,122
+             Z"
+          fill="url(#carGrad)" stroke="#1A7BB5" stroke-width="1.5"/>
+
+    <!-- Windshield -->
+    <path d="M96,97 L102,84 L130,82 L135,97 Z" fill="#0D2A40" stroke="#3AAFE4" stroke-width="1"/>
+
+    <!-- Rear window -->
+    <path d="M137,97 L140,84 L155,85 L163,97 Z" fill="#0D2A40" stroke="#3AAFE4" stroke-width="1"/>
+
+    <!-- Speed lines -->
+    <line x1="50" y1="107" x2="30" y2="107" stroke="#e8381a" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="50" y1="113" x2="22" y2="113" stroke="#e8381a" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+    <line x1="50" y1="119" x2="30" y2="119" stroke="#e8381a" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+
+    <!-- Wheels -->
+    <circle cx="73" cy="130" r="10" fill="#0D0D0D" stroke="#3AAFE4" stroke-width="2.5"/>
+    <circle cx="73" cy="130" r="4" fill="#1A7BB5"/>
+    <circle cx="155" cy="130" r="10" fill="#0D0D0D" stroke="#3AAFE4" stroke-width="2.5"/>
+    <circle cx="155" cy="130" r="4" fill="#1A7BB5"/>
+
+    <!-- Headlight -->
+    <ellipse cx="176" cy="108" rx="4" ry="6" fill="#e8381a" opacity="0.9"/>
+
+    <!-- Door line -->
+    <line x1="115" y1="98" x2="115" y2="125" stroke="#1A7BB5" stroke-width="1" opacity="0.6"/>
+  </g>
+
+  <!-- === TEXT AREA === -->
+
+  <!-- JATT FIX PRO main text -->
+  <text x="210" y="105"
+        font-family="'Arial Black', 'Impact', sans-serif"
+        font-size="58"
+        font-weight="900"
+        letter-spacing="3"
+        fill="url(#carGrad)"
+        filter="url(#shadow)">JATT FIX</text>
+
+  <text x="210" y="162"
+        font-family="'Arial Black', 'Impact', sans-serif"
+        font-size="58"
+        font-weight="900"
+        letter-spacing="8"
+        fill="#e8381a"
+        filter="url(#shadow)">PRO</text>
+
+  <!-- Tagline -->
+  <text x="212" y="185"
+        font-family="'Arial', 'Helvetica', sans-serif"
+        font-size="13"
+        font-weight="400"
+        letter-spacing="4"
+        fill="#888888">AUTOMOTIVE SERVICES</text>
+
+  <!-- Divider line between icon and text -->
+  <line x1="200" y1="55" x2="200" y2="195" stroke="#2A2A2A" stroke-width="1.5"/>
+
+  <!-- Bottom accent line -->
+  <rect x="210" y="195" width="370" height="2" rx="1" fill="#e8381a" opacity="0.4"/>
+</svg>
