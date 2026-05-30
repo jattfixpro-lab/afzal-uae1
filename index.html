@@ -20,6 +20,23 @@
 
   gtag('config', 'AW-18112640229');
 </script>
+  <!-- Event snippet for Contact conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-18112640229/IXXdCPiujrYcEOXp47xD',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+
   <!-- GEO TARGETING -->
   <meta name="geo.region" content="AE-DU" />
   <meta name="geo.placename" content="Dubai, United Arab Emirates" />
