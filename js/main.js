@@ -45,29 +45,59 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ===========================
-// CONTACT FORM SUBMISSION
+// CONTACT FORM SUBMISSION (Netlify Forms)
 // ===========================
 const form = document.getElementById('contactForm');
+
+function encode(data) {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&');
+}
+
 form.addEventListener('submit', function (e) {
   e.preventDefault();
   const btn = form.querySelector('button[type="submit"]');
   btn.textContent = 'Sending...';
   btn.disabled = true;
 
-  // Simulate async submission
-  setTimeout(() => {
-    btn.textContent = 'Request Sent!';
-    btn.style.background = '#16a34a';
-    btn.style.borderColor = '#16a34a';
-    form.reset();
+  const data = {
+    'form-name': 'contact',
+    name: document.getElementById('name').value,
+    phone: document.getElementById('phone').value,
+    email: document.getElementById('email').value,
+    service: document.getElementById('service').value,
+    message: document.getElementById('message').value,
+  };
 
-    setTimeout(() => {
-      btn.textContent = 'Send Request';
-      btn.style.background = '';
-      btn.style.borderColor = '';
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: encode(data),
+  })
+    .then(() => {
+      btn.textContent = 'Request Sent! ✓';
+      btn.style.background = '#16a34a';
+      btn.style.borderColor = '#16a34a';
+      form.reset();
+      setTimeout(() => {
+        btn.textContent = 'Send Request';
+        btn.style.background = '';
+        btn.style.borderColor = '';
+        btn.disabled = false;
+      }, 4000);
+    })
+    .catch(() => {
+      btn.textContent = 'Failed. Try again.';
+      btn.style.background = '#dc2626';
+      btn.style.borderColor = '#dc2626';
       btn.disabled = false;
-    }, 3000);
-  }, 1200);
+      setTimeout(() => {
+        btn.textContent = 'Send Request';
+        btn.style.background = '';
+        btn.style.borderColor = '';
+      }, 3000);
+    });
 });
 
 // ===========================
