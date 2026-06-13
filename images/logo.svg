@@ -128,7 +128,7 @@
         font-size="13"
         font-weight="400"
         letter-spacing="4"
-        fill="#888888">AUTOMOTIVE SERVICES</text>
+        fill="#888888">Mobile Tyre Repair Service</text>
 
   <!-- Divider line between icon and text -->
   <line x1="200" y1="55" x2="200" y2="195" stroke="#2A2A2A" stroke-width="1.5"/>
